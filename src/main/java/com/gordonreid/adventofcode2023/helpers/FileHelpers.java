@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 @UtilityClass
 public final class FileHelpers {
@@ -24,9 +23,6 @@ public final class FileHelpers {
 
     public static List<String> getResourceLines(String filename) throws URISyntaxException, IOException {
         File file = getFileFromResource(filename);
-        return Files.readAllLines(file.toPath(), StandardCharsets.UTF_8)
-                .stream()
-                .filter(line -> !line.isBlank())
-                .collect(Collectors.toList());
+        return Files.readAllLines(file.toPath(), StandardCharsets.UTF_8);
     }
 }
