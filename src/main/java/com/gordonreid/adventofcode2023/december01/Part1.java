@@ -4,7 +4,7 @@ import java.util.List;
 
 final class Part1 {
 
-    static int run(List<String> input) {
+    static long run(List<String> input) {
         return input.stream()
                 .map(Common::stripNonDigits)
                 .map(Common::getFirstAndLastDigitAsString)

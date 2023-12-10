@@ -17,7 +17,7 @@ final class Part2 {
             "nine", "n9e"
     );
 
-    static int run(List<String> input) {
+    static long run(List<String> input) {
         return input.stream()
                 .map(Part2::replaceSpeltOutDigits)
                 .map(Common::stripNonDigits)

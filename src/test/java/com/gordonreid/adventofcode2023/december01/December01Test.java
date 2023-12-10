@@ -23,36 +23,36 @@ public class December01Test {
 
     @Test
     public void part1_given_example() {
-        int expectedResult = 142;
+        long expectedResult = 142;
 
-        int actualResult = Part1.run(EXAMPLE_INPUT_1);
+        long actualResult = Part1.run(EXAMPLE_INPUT_1);
 
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void part1_actual() {
-        int expectedResult = 54634;
+        long expectedResult = 54634;
 
-        int actualResult = Part1.run(ACTUAL_INPUT);
+        long actualResult = Part1.run(ACTUAL_INPUT);
 
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void part2_given_example() {
-        int expectedResult = 281;
+        long expectedResult = 281;
 
-        int actualResult = Part2.run(EXAMPLE_INPUT_2);
+        long actualResult = Part2.run(EXAMPLE_INPUT_2);
 
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
     public void part2_actual() {
-        int expectedResult = 53855;
+        long expectedResult = 53855;
 
-        int actualResult = Part2.run(ACTUAL_INPUT);
+        long actualResult = Part2.run(ACTUAL_INPUT);
 
         assertEquals(expectedResult, actualResult);
     }
