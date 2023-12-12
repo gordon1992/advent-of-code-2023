@@ -12,8 +12,11 @@ public class Part2 {
     static long run(List<String> input) {
         List<Range<Long>> seeds = getSeeds(input.getFirst());
         List<Set<MappedRange>> ranges = MappedRange.getRanges(input);
-        long lowestLocationToThousands = getLowestLocation(seeds, ranges, 0, 1000) - 1000;
-        return getLowestLocation(seeds, ranges, lowestLocationToThousands, 1);
+        long lowestLocation = 0;
+        for (int stepping = 100_000; stepping > 0; stepping /= 10) {
+            lowestLocation = getLowestLocation(seeds, ranges, lowestLocation, stepping) - stepping;
+        }
+        return lowestLocation + 1; // The last step, 1, was removed in the loop, so we add it back in.
     }
 
     private static long getLowestLocation(List<Range<Long>> seeds, List<Set<MappedRange>> originalRanges, long start, int stepping) {
