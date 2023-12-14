@@ -11,13 +11,13 @@ public class Part2 {
     }
 
     private static long nextValueInHistory(String line) {
-        List<List<Long>> sequencies = Common.getSequencies(line);
+        List<List<Long>> sequences = Common.getSequences(line);
         long nextValue = 0;
-        for (int i = sequencies.size() - 1; i >= 0; i--) {
-            if (i != sequencies.size() - 1) {
-                nextValue = sequencies.get(i).getFirst() - nextValue;
+        for (int i = sequences.size() - 1; i >= 0; i--) {
+            if (i != sequences.size() - 1) {
+                nextValue = sequences.get(i).getFirst() - nextValue;
             }
-            sequencies.get(i).addFirst(nextValue);
+            sequences.get(i).addFirst(nextValue);
         }
         return nextValue;
     }
