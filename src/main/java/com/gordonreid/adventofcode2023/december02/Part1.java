@@ -1,7 +1,5 @@
 package com.gordonreid.adventofcode2023.december02;
 
-import com.google.common.base.Preconditions;
-
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -38,7 +36,6 @@ final class Part1 {
 
     private static long getGameId(String line) {
         Matcher idMatcher = GAME_ID_PATTERN.matcher(line);
-        Preconditions.checkArgument(idMatcher.find(), "Failed to get Game ID from {}", line);
-        return Long.parseLong(idMatcher.group(1));
+        return idMatcher.find() ? Long.parseLong(idMatcher.group(1)) : -1L;
     }
 }

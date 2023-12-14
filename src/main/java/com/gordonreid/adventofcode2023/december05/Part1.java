@@ -17,7 +17,7 @@ public class Part1 {
             for (Set<MappedRange> mappedRangeSet : ranges) {
                 for (MappedRange mappedRange : mappedRangeSet) {
                     if (mappedRange.sourceRange().contains(location)) {
-                        location += mappedRange.destinationRange().lowerEndpoint() - mappedRange.sourceRange().lowerEndpoint();
+                        location += mappedRange.destinationRange().getLower() - mappedRange.sourceRange().getLower();
                         break;
                     }
                 }

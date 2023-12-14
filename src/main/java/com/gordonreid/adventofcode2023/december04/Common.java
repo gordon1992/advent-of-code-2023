@@ -1,7 +1,5 @@
 package com.gordonreid.adventofcode2023.december04;
 
-import com.google.common.collect.Sets;
-
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -12,8 +10,8 @@ public final class Common {
         String lineWithoutCardNumber = line.replaceAll("Card.*: ", "");
         Set<Long> winningNumbers = getWinningNumbers(lineWithoutCardNumber);
         Set<Long> yourNumbers = getYourNumbers(lineWithoutCardNumber);
-        Set<Long> matchingNumbers = Sets.intersection(winningNumbers, yourNumbers);
-        return matchingNumbers.size();
+        winningNumbers.retainAll(yourNumbers);
+        return winningNumbers.size();
     }
 
     private static Set<Long> getYourNumbers(String withoutCardNumber) {
