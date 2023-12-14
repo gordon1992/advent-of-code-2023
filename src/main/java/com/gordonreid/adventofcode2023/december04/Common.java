@@ -1,14 +1,12 @@
 package com.gordonreid.adventofcode2023.december04;
 
 import com.google.common.collect.Sets;
-import lombok.experimental.UtilityClass;
 
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@UtilityClass
-public class Common {
+public final class Common {
 
     static long getWinningNumberCount(String line) {
         String lineWithoutCardNumber = line.replaceAll("Card.*: ", "");

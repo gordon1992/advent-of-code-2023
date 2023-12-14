@@ -1,26 +1,27 @@
 package com.gordonreid.adventofcode2023.december07;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@AllArgsConstructor
-@Getter
 public class Hand implements Comparable<Hand> {
 
-    final List<Integer> cards;
-    final int type;
-    final long bet;
+    private final List<Integer> cards;
+    private final int type;
+    private final long bet;
+
+    public Hand(List<Integer> cards, int type, long bet) {
+        this.cards = cards;
+        this.type = type;
+        this.bet = bet;
+    }
 
     static long calculateWinnings(Stream<Hand> handStream) {
         List<Hand> hands = handStream.sorted().toList();
         long winnings = 0;
         for (int i = 0; i < hands.size(); i++) {
-            winnings += hands.get(i).getBet() * (i + 1);
+            winnings += hands.get(i).bet * (i + 1);
         }
         return winnings;
     }

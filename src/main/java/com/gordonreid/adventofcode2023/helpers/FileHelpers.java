@@ -1,7 +1,5 @@
 package com.gordonreid.adventofcode2023.helpers;
 
-import lombok.experimental.UtilityClass;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -11,7 +9,6 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.Objects;
 
-@UtilityClass
 public final class FileHelpers {
 
     private static File getFileFromResource(String filename) throws URISyntaxException {
