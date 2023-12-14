@@ -1,6 +1,6 @@
 package com.gordonreid.adventofcode2023.december10;
 
-import com.gordonreid.adventofcode2023.december10.Common.Coordinate;
+import com.gordonreid.adventofcode2023.helpers.Coordinate;
 
 import java.util.List;
 

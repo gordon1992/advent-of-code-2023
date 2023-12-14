@@ -1,5 +1,7 @@
 package com.gordonreid.adventofcode2023.december10;
 
+import com.gordonreid.adventofcode2023.helpers.Coordinate;
+
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -76,6 +78,4 @@ public class Common {
         return adjacent;
     }
 
-    record Coordinate(int x, int y) {
-    }
 }
