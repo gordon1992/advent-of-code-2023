@@ -26,6 +26,6 @@ public class Part2 extends Hand {
         }
         int type = Hand.inferType(cards, jokerCount);
         long bet = Long.parseLong(line.split(" ")[1]);
-        return new Hand(cards, type, bet);
+        return new Part2(cards, type, bet);
     }
 }

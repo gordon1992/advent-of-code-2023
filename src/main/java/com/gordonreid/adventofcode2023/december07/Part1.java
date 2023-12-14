@@ -22,7 +22,7 @@ public class Part1 extends Hand {
         }
         int type = Hand.inferType(cards);
         long bet = Long.parseLong(line.split(" ")[1]);
-        return new Hand(cards, type, bet);
+        return new Part1(cards, type, bet);
     }
 
 }
