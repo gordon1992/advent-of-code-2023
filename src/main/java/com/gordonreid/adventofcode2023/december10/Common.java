@@ -1,7 +1,9 @@
 package com.gordonreid.adventofcode2023.december10;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Common {
     private static final String ANIMAL = "S";
@@ -23,20 +25,18 @@ public class Common {
     }
 
     static List<Coordinate> getLoop(List<String> input, Coordinate animalLocation) {
-        List<Coordinate> loop = new ArrayList<>();
+        Set<Coordinate> loop = new LinkedHashSet<>();
         List<Coordinate> queue = new ArrayList<>();
         queue.add(animalLocation);
         while (!queue.isEmpty()) {
             Coordinate coordinate = queue.removeLast();
-            if (!loop.contains(coordinate)) {
-                loop.add(coordinate);
-            }
+            loop.add(coordinate);
             getAdjacent(input, coordinate).stream()
                     .filter(adjacent -> isConnected(coordinate, adjacent, input))
                     .filter(c -> !loop.contains(c))
                     .forEach(queue::add);
         }
-        return loop;
+        return loop.stream().toList();
     }
 
     private static boolean isConnected(Coordinate current, Coordinate adjacent, List<String> input) {
